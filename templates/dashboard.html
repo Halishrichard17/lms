@@ -1,0 +1,104 @@
+{% include 'header.html' %}
+<body>
+  <style>
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-block {
+        padding: 20px;
+        color: #fff;
+    }
+
+    .rotate {
+        transform: rotate(45deg);
+        margin-right: 20px;
+    }
+
+    .text-uppercase {
+        text-transform: uppercase;
+    }
+
+    .display-1 {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+
+    .bg-success {
+        background-color: #28a745 !important;
+    }
+
+    .bg-info {
+        background-color: #17a2b8 !important;
+    }
+
+    .bg-warning {
+        background-color: #ffc107 !important;
+    }
+
+    .bg-danger {
+        background-color: #dc3545 !important;
+    }
+
+    .card-inverse.card-success,
+    .card-inverse.card-info,
+    .card-inverse.card-warning,
+    .card-inverse.card-danger {
+        border: none;
+    }
+
+    .card-inverse.card-success .fa,
+    .card-inverse.card-info .fa,
+    .card-inverse.card-warning .fa,
+    .card-inverse.card-danger .fa {
+        color: #fff;
+    }
+</style>
+  <div class="container-fluid" id="main">
+  {% include 'top_menus.html' %}  	
+    <div class="row row-offcanvas row-offcanvas-left">
+      {% include 'left_menus.html' %}
+      <div class="col-md-9 col-lg-10 main"> 
+		<h2>Dashboard</h2>
+    <div class="row mb-3">
+      <div class="col-xl-3 col-lg-6">
+          <div class="card card-inverse card-success">
+              <div class="card-block bg-success">
+                  <div class="rotate">
+                      <i class="fa fa-user fa-5x"></i>
+                  </div>
+                  <h6 class="text-uppercase">Total Books</h6>
+                  <h1 class="display-1">{{ total_books }}</h1>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-3 col-lg-6">
+          <div class="card card-inverse card-info">
+              <div class="card-block bg-info">
+                  <div class="rotate">
+                      <i class="fa fa-twitter fa-5x"></i>
+                  </div>
+                  <h6 class="text-uppercase">Available Books</h6>
+                  <h1 class="display-1">{{ available_books }}</h1>
+              </div>
+          </div>
+      </div>
+     
+      <div class="col-xl-3 col-lg-6">
+          <div class="card card-inverse card-danger">
+              <div class="card-block bg-danger">
+                  <div class="rotate">
+                      <i class="fa fa-list fa-4x"></i>
+                  </div>
+                  <h6 class="text-uppercase">Issued Books</h6>
+                  <h1 class="display-1">{{ issued_books }}</h1>
+              </div>
+          </div>
+      </div>
+  </div>
+        <hr>         
+       </div>       
+      </div>     
+    </div>
+  </body>
+</html>
